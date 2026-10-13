@@ -88,7 +88,7 @@ function createProjectCard(project) {
   const body = document.createElement("div");
   body.className = "card-body";
   body.append(
-    createTextElement("h2", "card-title", project.title),
+    createTextElement("h3", "card-title", project.title),
     createTextElement("p", "card-description", project.description)
   );
 

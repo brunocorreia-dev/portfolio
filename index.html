@@ -4,35 +4,117 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfólio de Bruno Correia, desenvolvedor backend Java.">
+  <meta name="theme-color" content="#0b0b0b">
   <title>Bruno Correia | Portfólio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <p class="eyebrow">projects</p>
-    <h1>Meus projetos</h1>
-    <p class="subtitle">Backend com Java e Spring Boot.</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio">
+        <span class="brand-mark" aria-hidden="true">B</span>
+        <span class="brand-text">
+          <span class="brand-name">Bruno Correia</span>
+          <span class="brand-sub" aria-hidden="true">backend · java</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Seções da página">
+        <ul>
+          <li><a href="#inicio" aria-current="location">Início</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <!-- Filtros: o data-category é o valor que o main.js vai comparar com project.category -->
-    <nav class="filters" aria-label="Filtrar projetos por categoria">
-      <button class="filter-btn active" data-category="All">All</button>
-      <button class="filter-btn" data-category="Web">Web</button>
-      <button class="filter-btn" data-category="API">API</button>
-      <button class="filter-btn" data-category="CLI">CLI</button>
-    </nav>
+    <section id="inicio" class="hero" aria-labelledby="hero-titulo">
+      <div class="container hero-inner">
+        <div class="hero-top">
+          <div>
+            <p class="eyebrow">Engenharia de Software</p>
+            <h1 id="hero-titulo" class="display-title hero-title">
+              <span class="title-line">Backend</span>
+              <span class="title-line title-outline">Java &amp; Spring&nbsp;Boot</span>
+            </h1>
+          </div>
+          <a class="hero-cta" href="#projetos">Ver projetos <span aria-hidden="true">→</span></a>
+        </div>
 
-    <!-- Contêiner vazio: o main.js desenha os cards aqui dentro -->
-    <section id="projects-grid" class="grid" aria-live="polite"></section>
+        <div class="hero-bottom">
+          <p class="hero-desc">Sou Bruno, estudante de Engenharia de Software, focado em desenvolvimento backend com Java e Spring Boot.</p>
+          <p class="hero-stack"><span aria-hidden="true">// </span>Java · Spring Boot · PostgreSQL</p>
+        </div>
+
+        <ul class="social-links" aria-label="Perfis">
+          <li><a class="social-link" href="https://github.com/brunocorreia-dev" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (abre em nova aba)</span></a></li>
+          <li><a class="social-link" href="https://linkedin.com/in/bruno-correia-312326317" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (abre em nova aba)</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projetos" class="section section--alt" aria-labelledby="projetos-titulo">
+      <span class="section-number" aria-hidden="true">01</span>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-label" aria-hidden="true">projects.js</p>
+            <h2 id="projetos-titulo" class="display-title section-title">
+              <span class="title-line">Meus</span>
+              <span class="title-line title-outline">projetos</span>
+            </h2>
+          </div>
+
+          <!-- Filtros: o data-category é o valor que o main.js vai comparar com project.category -->
+          <nav class="filters" aria-label="Filtrar projetos por categoria">
+            <button class="filter-btn active" data-category="All">All</button>
+            <button class="filter-btn" data-category="Web">Web</button>
+            <button class="filter-btn" data-category="API">API</button>
+            <button class="filter-btn" data-category="CLI">CLI</button>
+          </nav>
+        </div>
+
+        <!-- Contêiner vazio: o main.js desenha os cards aqui dentro -->
+        <div id="projects-grid" class="grid" aria-live="polite"></div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <a href="https://github.com/brunocorreia-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a href="https://linkedin.com/in/bruno-correia-312326317" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <footer id="contato" class="section site-footer" aria-labelledby="contato-titulo">
+    <span class="section-number" aria-hidden="true">02</span>
+    <div class="container">
+      <p class="section-label" aria-hidden="true">contato</p>
+      <h2 id="contato-titulo" class="display-title section-title">
+        <span class="title-line">Vamos</span>
+        <span class="title-line title-outline">conversar</span>
+      </h2>
+      <p class="contact-text">Você me encontra no GitHub e no LinkedIn.</p>
+
+      <ul class="contact-links">
+        <li>
+          <a class="contact-link" href="https://github.com/brunocorreia-dev" target="_blank" rel="noopener noreferrer">
+            <span class="contact-name">GitHub</span>
+            <span class="contact-handle">brunocorreia-dev</span>
+            <span class="visually-hidden"> (abre em nova aba)</span>
+          </a>
+        </li>
+        <li>
+          <a class="contact-link" href="https://linkedin.com/in/bruno-correia-312326317" target="_blank" rel="noopener noreferrer">
+            <span class="contact-name">LinkedIn</span>
+            <span class="contact-handle">bruno-correia-312326317</span>
+            <span class="visually-hidden"> (abre em nova aba)</span>
+          </a>
+        </li>
+      </ul>
+
+      <p class="footer-note">Bruno Correia · Portfólio</p>
+    </div>
   </footer>
 
   <!-- type="module" permite usar import/export. Exige servidor local (não funciona via file://) -->
   <script type="module" src="main.js"></script>
+  <script type="module" src="nav.js"></script>
 </body>
 </html>
