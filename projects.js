@@ -24,7 +24,7 @@ export const projects = [
     description: "[escreva aqui o problema que a ferramenta resolve]",
     category: "CLI",
     stack: ["Java", "LLM"],
-    image: "img/docgen.gif",
+    image: "img/docgen.png",
     github: "https://github.com/brunocorreia-dev/Docgen"
     // sem "demo" de propósito: serve para testar o caso do campo ausente
   }
