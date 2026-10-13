@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Bruno Correia, desenvolvedor backend Java.">
+  <title>Bruno Correia | Portfólio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">projects</p>
+    <h1>Meus projetos</h1>
+    <p class="subtitle">Backend com Java e Spring Boot.</p>
+  </header>
+
+  <main>
+    <!-- Filtros: o data-category é o valor que o main.js vai comparar com project.category -->
+    <nav class="filters" aria-label="Filtrar projetos por categoria">
+      <button class="filter-btn active" data-category="All">All</button>
+      <button class="filter-btn" data-category="Web">Web</button>
+      <button class="filter-btn" data-category="API">API</button>
+      <button class="filter-btn" data-category="CLI">CLI</button>
+    </nav>
+
+    <!-- Contêiner vazio: o main.js desenha os cards aqui dentro -->
+    <section id="projects-grid" class="grid" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <a href="https://github.com/brunocorreia-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://linkedin.com/in/bruno-correia-312326317" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </footer>
+
+  <!-- type="module" permite usar import/export. Exige servidor local (não funciona via file://) -->
+  <script type="module" src="main.js"></script>
+</body>
+</html>
