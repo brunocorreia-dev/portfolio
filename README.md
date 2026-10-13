@@ -4,15 +4,16 @@
 
 Página estática que apresenta meus projetos de software, construída com HTML, CSS e JavaScript puro (ES modules). Não usa frameworks, dependências nem etapa de build.
 
-Os cards são gerados a partir dos dados em `projects.js` e podem ser filtrados por categoria.
+A página tem três seções: apresentação (hero), projetos e contato. Os cards de projeto são gerados a partir dos dados em `projects.js` e podem ser filtrados por categoria.
 
-| Arquivo       | Função                                              |
-| ------------- | --------------------------------------------------- |
-| `index.html`  | Estrutura da página e botões de filtro              |
-| `style.css`   | Estilos (tema escuro, grid e cards)                 |
-| `projects.js` | Dados dos projetos (única fonte de dados da página) |
-| `main.js`     | Cria os cards e aplica os filtros                   |
-| `img/`        | Imagens dos projetos                                |
+| Arquivo       | Função                                                          |
+| ------------- | --------------------------------------------------------------- |
+| `index.html`  | Estrutura da página, textos do hero e do contato, filtros       |
+| `style.css`   | Estilos (tema escuro, tipografia, grid e cards)                 |
+| `projects.js` | Dados dos projetos (única fonte de dados dos cards)             |
+| `main.js`     | Cria os cards e aplica os filtros                               |
+| `nav.js`      | Destaca no menu a seção que está visível na tela                |
+| `img/`        | Imagens dos projetos                                            |
 
 ## Requisitos
 
@@ -71,7 +72,7 @@ Exemplo de estrutura. **Todos os valores abaixo são ilustrativos e precisam ser
 
 **Categoria**: o valor precisa ser idêntico (inclusive maiúsculas) ao `data-category` de um botão de filtro em `index.html`. Para criar uma categoria nova, adicione também um botão com esse `data-category`. Se não houver botão correspondente, o console do navegador mostra um aviso e o projeto só aparece no filtro `All`.
 
-**Imagens**: coloque o arquivo na pasta `img/` e use um caminho relativo, sem barra no início (`img/meu-projeto.png`). Na Vercel os nomes diferenciam maiúsculas de minúsculas, então `Img/Projeto.PNG` e `img/projeto.png` são arquivos diferentes. Imagens em proporção 16:9 aparecem sem cortes; outras proporções são recortadas para preencher o espaço. Se a imagem não carregar, o card mostra "Imagem indisponível".
+**Imagens**: coloque o arquivo na pasta `img/` e use um caminho relativo, sem barra no início (`img/meu-projeto.png`). Na Vercel os nomes diferenciam maiúsculas de minúsculas, então `Img/Projeto.PNG` e `img/projeto.png` são arquivos diferentes. A área da imagem tem altura fixa de 200 px e a largura do card; a imagem é recortada para preencher esse espaço, mantendo a parte de cima visível. Prefira capturas horizontais (por exemplo, 1280 × 720) com o conteúdo importante no topo. Se a imagem não carregar, o card mostra "Imagem indisponível".
 
 **Links**: o botão GitHub aparece em todos os cards. Enquanto o link estiver vazio, não começar com `http://` ou `https://`, ou contiver um trecho entre colchetes (como `[repositorio]`), ele aparece como "GitHub (link pendente)", sem destino. O botão Demo só aparece quando `demo` tiver um link válido nessas mesmas condições.
 
