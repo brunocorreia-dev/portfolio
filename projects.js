@@ -10,21 +10,13 @@
 //   demo         string?  OPCIONAL: se não existir, o botão de Demo não aparece
 
 export const projects = [
-  {
-    title: "Time Tracker API",
-    description: "[escreva aqui o problema que a API resolve]",
-    category: "API",
-    stack: ["Java", "Spring Boot", "PostgreSQL"],
-    image: "img/time-tracker.png",
-    github: "https://github.com/brunocorreia-dev/[repositorio]",
-    demo: "https://[sua-api]/swagger-ui.html"
-  },
+
   {
     title: "DocGen",
-    description: "[escreva aqui o problema que a ferramenta resolve]",
+    description: "DocGen: CLI em Java 21 que gera README e ARCHITECTURE com LLMs",
     category: "CLI",
     stack: ["Java", "LLM"],
-    image: "img/docgen.png",
+    image: "",
     github: "https://github.com/brunocorreia-dev/Docgen"
     // sem "demo" de propósito: serve para testar o caso do campo ausente
   }
