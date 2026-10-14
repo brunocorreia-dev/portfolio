@@ -16,7 +16,7 @@ export const projects = [
     description: "DocGen: CLI em Java 21 que gera README e ARCHITECTURE com LLMs",
     category: "CLI",
     stack: ["Java", "LLM"],
-    image: "",
+    image: "docgen.png",
     github: "https://github.com/brunocorreia-dev/Docgen"
     // sem "demo" de propósito: serve para testar o caso do campo ausente
   }
