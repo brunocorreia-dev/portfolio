@@ -368,14 +368,6 @@ a {
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.social-link::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-}
-
 .social-link:hover {
   border-color: var(--accent-soft);
   color: var(--text);
@@ -702,6 +694,9 @@ a.btn-primary:hover {
 }
 
 .contact-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 700;
 }
 
@@ -719,6 +714,13 @@ a.btn-primary:hover {
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 0.75rem;
+}
+
+/* Logos dos links sociais: herdam a cor do texto (e do hover) via currentColor */
+.icon {
+  flex-shrink: 0;
+  width: 1.1em;
+  height: 1.1em;
 }
 
 /* Acessibilidade */
