@@ -464,6 +464,7 @@ a {
 
 /* Cards */
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -624,6 +625,23 @@ a.btn::before {
 a.btn-outline:hover {
   border-color: var(--accent-soft);
   color: var(--text);
+}
+
+/* Card inteiro clicável ("stretched link"): o ::after do link do GitHub cobre o .card.
+   O link fica static para o ::after se posicionar pelo .card, e não pelo próprio botão. */
+.card a.btn-outline {
+  position: static;
+}
+
+.card a.btn-outline::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* Demo continua clicável por cima da área do GitHub */
+.card a.btn-primary {
+  z-index: 1;
 }
 
 .btn-primary {
