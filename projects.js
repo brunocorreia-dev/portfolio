@@ -19,5 +19,14 @@ export const projects = [
     image: "img/docgen.png",
     github: "https://github.com/brunocorreia-dev/Docgen"
     // sem "demo" de propósito: serve para testar o caso do campo ausente
+  },
+
+  {
+    title: "Feirão de veículos",
+    description: "Consulta de tabela FIPE em tempo real",
+    category: "API",
+    stack:["Java, Spring Boot"],
+    image: "img/feiraoVeiculos.png",
+    github: "https://github.com/brunocorreia-dev/feiraoveiculos"
   }
 ];
