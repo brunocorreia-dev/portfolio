@@ -1,88 +1,98 @@
-# Portfólio de projetos
+# Bruno Correia
 
-## Sobre o projeto
+**Estudante de Engenharia de Software | Foco em Backend Java**\
+Construo minha formação técnica estudando e desenvolvendo projetos práticos em Java.
 
-Página estática que apresenta meus projetos de software, construída com HTML, CSS e JavaScript puro (ES modules). Não usa frameworks, dependências nem etapa de build.
+[GitHub](https://github.com/brunocorreia-dev) · [LinkedIn](https://www.linkedin.com/in/brunocorreia-dev) · [Portfólio online](https://bruno-correia-ten.vercel.app)
 
-A página tem três seções: apresentação (hero), projetos e contato. Os cards de projeto são gerados a partir dos dados em `projects.js` e podem ser filtrados por categoria.
+---
 
-| Arquivo       | Função                                                          |
-| ------------- | --------------------------------------------------------------- |
-| `index.html`  | Estrutura da página, textos do hero e do contato, filtros       |
-| `style.css`   | Estilos (tema escuro, tipografia, grid e cards)                 |
-| `projects.js` | Dados dos projetos (única fonte de dados dos cards)             |
-| `main.js`     | Cria os cards e aplica os filtros                               |
-| `nav.js`      | Destaca no menu a seção que está visível na tela                |
-| `img/`        | Imagens dos projetos                                            |
+## Sobre mim
 
-## Requisitos
+Estou cursando Engenharia de Software e direciono meus estudos para o desenvolvimento backend com Java. Complemento a graduação com cursos da Alura voltados a backend Java.
 
-- Um navegador moderno (versão atual do Chrome, Firefox, Edge ou Safari).
-- Um servidor HTTP local, necessário para carregar os módulos JavaScript (`import`/`export`).
+Procuro consolidar os fundamentos de programação desenvolvendo aplicações práticas. Valorizo fundamentos sólidos, código legível, resolução de problemas e aprendizado contínuo.
 
-## Como executar localmente
+Meu objetivo é construir uma carreira sólida como desenvolvedor backend Java, inclusive em equipes remotas e internacionais. Mais adiante, pretendo explorar segurança de aplicações (AppSec) e DevSecOps.
 
-Abrir o `index.html` diretamente (endereço começando com `file://`) não funciona: por restrições de origem e segurança, o navegador bloqueia módulos JavaScript carregados assim, e a página aparece sem nenhum card. Use um servidor local, com uma das opções abaixo.
+## Tecnologias
 
-**Live Server (VS Code)**: se a extensão já estiver instalada no editor, clique com o botão direito em `index.html` e escolha **Open with Live Server**. O navegador abre sozinho, normalmente em `http://127.0.0.1:5500`.
+Ao lado de cada tecnologia, indico o projeto em que ela foi aplicada. As marcadas como *em estudo* ainda não aparecem em nenhum projeto publicado.
 
-**`npx serve`**: exige Node.js e npm instalados. Na raiz do projeto, rode:
+### Linguagem principal
 
-```bash
-npx serve .
-```
+- **Java**: DocGen e Feirão de Veículos, ambos em Java 21
 
-Se o pacote `serve` ainda não estiver no cache do npm, o `npx` pede confirmação e faz um download temporário dele.
+### Backend e integrações
 
-**Python 3**: se você já tiver Python 3 instalado, esta opção não baixa nada:
+- **Spring Boot**: Feirão de Veículos
+- **Integração com LLMs**: DocGen
+- **APIs REST**: *em estudo*
 
-```bash
-python3 -m http.server 8000
-```
+### Bancos de dados
 
-Em qualquer opção, abra no navegador a URL exibida pelo servidor no terminal (por exemplo `http://localhost:3000` no `serve` ou `http://localhost:8000` no Python). Para encerrar o servidor, use `Ctrl+C` no terminal.
+- **SQL e PostgreSQL**: *em estudo*
 
-## Como adicionar um projeto
+### Ferramentas e ambiente
 
-Todos os projetos ficam no array `projects`, em `projects.js`. Para adicionar um, inclua um novo objeto nesse array com os campos abaixo.
+- **Git e GitHub**: versionamento dos projetos e deste portfólio
+- **Maven**: build do DocGen e do Feirão de Veículos
+- **Linux**: ambiente de desenvolvimento
+- **Docker**: *em estudo*
 
-| Campo         | Tipo       | Obrigatório | Descrição                                                    |
-| ------------- | ---------- | ----------- | ------------------------------------------------------------ |
-| `title`       | `string`   | sim         | Nome do projeto                                              |
-| `description` | `string`   | sim         | Uma ou duas frases sobre o problema que o projeto resolve    |
-| `category`    | `string`   | sim         | `"Web"`, `"API"` ou `"CLI"`                                  |
-| `stack`       | `string[]` | sim         | Tecnologias usadas; cada item vira uma tag no card           |
-| `image`       | `string`   | sim         | Caminho da imagem (print ou GIF) dentro de `img/`            |
-| `github`      | `string`   | sim         | Link do repositório                                          |
-| `demo`        | `string`   | não         | Link da demonstração; sem ele, o botão Demo não aparece      |
+## Projetos
 
-Exemplo de estrutura. **Todos os valores abaixo são ilustrativos e precisam ser substituídos por dados reais:**
+<!-- Para incluir um projeto, repita o formato abaixo: descrição, tecnologias, repositório e demonstração (só se houver uma funcionando). -->
 
-```js
-{
-  title: "Nome do projeto",
-  description: "Qual problema o projeto resolve, em uma ou duas frases.",
-  category: "API",
-  stack: ["Java", "Spring Boot"],
-  image: "img/nome-do-projeto.png",
-  github: "https://github.com/usuario/nome-do-repositorio",
-  demo: "https://endereco-da-demonstracao" // opcional: apague a linha se não houver demo
-}
-```
+### DocGen
 
-**Categoria**: o valor precisa ser idêntico (inclusive maiúsculas) ao `data-category` de um botão de filtro em `index.html`. Para criar uma categoria nova, adicione também um botão com esse `data-category`. Se não houver botão correspondente, o console do navegador mostra um aviso e o projeto só aparece no filtro `All`.
+Ferramenta de linha de comando (CLI) em Java 21 que gera os documentos README e ARCHITECTURE de um projeto usando LLMs.
 
-**Imagens**: coloque o arquivo na pasta `img/` e use um caminho relativo, sem barra no início (`img/meu-projeto.png`). Na Vercel os nomes diferenciam maiúsculas de minúsculas, então `Img/Projeto.PNG` e `img/projeto.png` são arquivos diferentes. A área da imagem tem altura fixa de 200 px e a largura do card; a imagem é recortada para preencher esse espaço, mantendo a parte de cima visível. Prefira capturas horizontais (por exemplo, 1280 × 720) com o conteúdo importante no topo. Se a imagem não carregar, o card mostra "Imagem indisponível".
+- **Tecnologias:** Java, LLM
+- **Repositório:** [brunocorreia-dev/Docgen](https://github.com/brunocorreia-dev/Docgen)
 
-**Links**: o botão GitHub aparece em todos os cards. Enquanto o link estiver vazio, não começar com `http://` ou `https://`, ou contiver um trecho entre colchetes (como `[repositorio]`), ele aparece como "GitHub (link pendente)", sem destino. O botão Demo só aparece quando `demo` tiver um link válido nessas mesmas condições.
+### Feirão de Veículos
 
-**Conferência**: depois de editar, recarregue a página pelo servidor local, teste os filtros, abra cada link GitHub e Demo para confirmar que o destino existe e verifique se o console do navegador (F12) não mostra erros ou avisos.
+Aplicação para consultar a tabela FIPE em tempo real.
 
-## Deploy na Vercel
+- **Tecnologias:** Java, Spring Boot
+- **Repositório:** [brunocorreia-dev/feiraoveiculos](https://github.com/brunocorreia-dev/feiraoveiculos)
 
-1. Envie o repositório para o GitHub (`git push`), fora desta configuração local.
-2. Na Vercel, clique em **Add New… > Project** e importe o repositório.
-3. Em **Framework Preset**, selecione **Other**.
-4. Deixe o **Build Command** vazio: o projeto não tem etapa de build.
-5. Use a raiz do projeto como diretório de saída: deixe o **Output Directory** no padrão ou, se a interface pedir um valor, informe `.`.
-6. Clique em **Deploy**. A Vercel publica o site e gera uma URL; cada novo push na branch `main` gera um novo deploy automaticamente.
+## Jornada de aprendizado
+
+Minha evolução técnica acontece em três frentes complementares:
+
+- **Faculdade — Engenharia de Software:** conhecimentos das disciplinas da graduação, fundamentos de computação, exercícios e trabalhos acadêmicos relevantes.
+- **Alura — Backend Java:** cursos e módulos sobre programação, Java, backend e tecnologias relacionadas, com os exercícios e as aplicações práticas desenvolvidos durante os estudos.
+- **Projetos próprios:** aplicação do que estudo em projetos concretos, para experimentar, resolver problemas e consolidar o aprendizado.
+
+Por enquanto, os projetos acima são o registro publicado dessa jornada.
+
+<!-- Ao publicar materiais de uma frente (anotações, exercícios, trabalhos), adicione o link no item correspondente. -->
+
+## Objetivos técnicos
+
+Minhas prioridades de aprendizado para as próximas etapas:
+
+- Aprofundar Java e seus fundamentos.
+- Evoluir no desenvolvimento backend com Spring Boot.
+- Construir APIs REST bem estruturadas.
+- Aprimorar meus conhecimentos em bancos de dados e persistência.
+- Desenvolver boas práticas de organização de código e testes automatizados.
+- Consolidar, com a prática, o uso de Git, Docker e outras ferramentas de engenharia de software.
+- Explorar AppSec e DevSecOps futuramente.
+
+## Sobre este repositório
+
+Este repositório contém o código do meu [portfólio online](https://bruno-correia-ten.vercel.app), a página que reúne meus projetos. É um site estático em HTML, CSS e JavaScript, sem frameworks nem etapa de build. Os projetos exibidos ficam em [`projects.js`](projects.js).
+
+Para visualizar localmente, sirva a pasta com um servidor HTTP (por exemplo, `python3 -m http.server 8000`): os módulos JavaScript não carregam quando o `index.html` é aberto direto pelo navegador (`file://`).
+
+## Contato
+
+- **GitHub:** [github.com/brunocorreia-dev](https://github.com/brunocorreia-dev)
+- **LinkedIn:** [linkedin.com/in/brunocorreia-dev](https://www.linkedin.com/in/brunocorreia-dev)
+
+---
+
+Fique à vontade para conhecer meus projetos e acompanhar minha evolução ao longo da formação.
